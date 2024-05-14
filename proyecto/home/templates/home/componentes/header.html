@@ -1,0 +1,17 @@
+{% load static %}
+<!-- Header - set the background image for the header in the line below-->
+<header class="py-5 bg-image-full"
+        style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900')">
+    <div class="text-center  my-5">
+        <h1 class="text-white fs-3 fw-bolder fst-italic ">
+            {% block titular %}
+                <p>Bienvenidos !</p>
+            {% endblock titular %}
+        </h1>
+        <img class="img-fluid rounded-circle mb-lg-4  "
+             src="{% static 'home/img/coderhouse.jpg' %}"
+             alt="..." />
+        <p class="text-white-50 mb-0">Curso Desarrollo de aplicaciones web</p>
+    </div>
+</header>
+0
