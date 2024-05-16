@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    Secciones : Listado de Secciones
+{% endblock title %}
+
+{% block body_title %}
+    Secciones
+{% endblock body_title %}
+{% block body_subtitle %}
+    Listado de Secciones
+{% endblock body_subtitle %}
+
+{% block content %}
+<ul>
+    {% for seccion in secciones %}
+    <li>
+        <h5>{{seccion.nombre}}:</h5>
+        <ul>
+            <li>
+                <p>Ingeniero: <a href="">{{seccion.ingeniero}}</a></p>
+            </li>
+            <li>
+                <p>Obrero: <a href="">{{seccion.obrero}}</a></p>
+            </li>
+        </ul>
+    </li>
+    <a href=""><p> Eliminar seccion</p></a>
+    <a href=""><p> Modificar seccion</p></a>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'empleados:seccion_create' %}"><p> - Crear nueva Seccion</p></a>
+
+{% endblock content %}

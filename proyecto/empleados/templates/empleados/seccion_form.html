@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+{% if form.instance.pk %}
+    Secciones : Editar Seccion
+{% else %}
+    Secciones : Crear Seccion
+{% endif %}
+{% endblock title %}
+
+{% block body_title %}
+
+Secciones
+{% endblock body_title %}
+
+{% block body_subtitle %}
+{% if form.instance.pk %}
+Edite la Seccion
+{% else %}
+Crear una Seccion nueva
+{% endif %}
+{% endblock body_subtitle %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit">Confirmar</button>
+    </form>
+{% endblock content %}

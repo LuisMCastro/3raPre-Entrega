@@ -23,21 +23,27 @@ class Ingeniero_en_jefe(models.Model):
         return f"{self.apellido} {self.nombre}"
 
     class Meta:
-        verbose_name = "Ingeniero Jefe"
-        verbose_name_plural = "Ingenieros Jefes"
+        verbose_name = "Ingeniero "
+        verbose_name_plural = "Ingenieros "
 
 
 class Seccion(models.Model):
     """Area de trabajo de los empleados."""
 
     nombre = models.CharField(max_length=20, unique=True)
-    obrero = models.ManyToManyField(Obrero)
-    ingeniero_en_jefe = models.ForeignKey(
+    obrero = models.ForeignKey(
+        Obrero,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name="Obrero",
+    )
+    ingeniero = models.ForeignKey(
         Ingeniero_en_jefe,
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        verbose_name="Ingeniero en jefe",
+        verbose_name="Ingeniero ",
     )
 
     def __str__(self):

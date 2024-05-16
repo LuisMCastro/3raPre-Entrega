@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    3raPre-Entrega | Inicio
+    Inicio
 {% endblock title %}
 
 {% block body_title %}
@@ -12,7 +12,7 @@
 {% block content %}
 <ul>
     <h3>
-        <a href= ""> - Acceder a secciones.</a>
+        <a href= "{% url 'empleados:seccion_list' %}"> - Acceder a secciones.</a>
     </h3>
 </ul>
 <ul>
