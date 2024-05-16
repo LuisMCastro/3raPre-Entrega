@@ -25,8 +25,8 @@
             </li>
         </ul>
     </li>
-    <a href=""><p> Eliminar seccion</p></a>
-    <a href=""><p> Modificar seccion</p></a>
+    <a href="{% url 'empleados:seccion_delete' seccion.id %}"><p> Eliminar seccion</p></a>
+    <a href="{% url 'empleados:seccion_update' seccion.id %}"><p> Modificar seccion</p></a>
     {% endfor %}
 </ul>
 
