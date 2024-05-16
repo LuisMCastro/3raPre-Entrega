@@ -6,7 +6,7 @@ class Obrero(models.Model):
 
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
-    edad = models.SmallIntegerField(max_length=2)
+    edad = models.SmallIntegerField()
 
     def __str__(self):
         return f"{self.apellido} {self.nombre}"
@@ -17,7 +17,7 @@ class Ingeniero_en_jefe(models.Model):
 
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
-    edad = models.SmallIntegerField(max_length=2)
+    edad = models.SmallIntegerField()
 
     def __str__(self):
         return f"{self.apellido} {self.nombre}"
