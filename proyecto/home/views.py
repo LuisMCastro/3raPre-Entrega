@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 
-def index(request):
-    return render(request, "home/index.html")
+def home_index(request):
+    return render(request, "home/home_index.html")
 
 
 def base(request):
