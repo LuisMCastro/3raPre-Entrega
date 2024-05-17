@@ -1,26 +1,22 @@
 {% extends 'home/base.html' %}
 
 {% block title %}
-{% if  %}
-    
-{% endif %}
 {% if form.instance.pk %}
-    Secciones : Editar Seccion
+    Ingenieros : Editar Ingeniero
 {% else %}
-    Secciones : Crear Seccion
+    Ingenieros : Crear Ingeniero
 {% endif %}
 {% endblock title %}
 
 {% block body_title %}
-
-Secciones
+Ingenieros
 {% endblock body_title %}
 
 {% block body_subtitle %}
 {% if form.instance.pk %}
-Modifique la Seccion
+    Modifique datos de Ingeniero
 {% else %}
-Crear una Seccion nueva
+    Crear un Ingeniero nuevo
 {% endif %}
 {% endblock body_subtitle %}
 
