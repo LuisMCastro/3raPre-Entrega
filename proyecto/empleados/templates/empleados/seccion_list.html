@@ -12,16 +12,32 @@
 {% endblock body_subtitle %}
 
 {% block content %}
+<div class="container mt-5">
+    <div class="row mb-3">
+        <div class="col-lg-6">
+            <form action="{% url 'empleados:seccion_list' %}"
+                  method="get"
+                  class="input-group">
+                <input type="text"
+                       name="busqueda"
+                       class="form-control"
+                       placeholder="Buscar...">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 <ul>
     {% for seccion in secciones %}
     <li>
         <h5>{{seccion.nombre}}:</h5>
         <ul>
             <li>
-                <p>Ingeniero: <a href="">{{seccion.ingeniero}}</a></p>
+                <p>Ingeniero: <a href="{% url 'empleados:ingeniero_detail' seccion.ingeniero.id%}">{{seccion.ingeniero}}</a></p>
             </li>
             <li>
-                <p>Obrero: <a href="">{{seccion.obrero}}</a></p>
+                <p>Obrero: <a href="{% url 'empleados:obrero_detail' seccion.obrero.id%}">{{seccion.obrero}}</a></p>
             </li>
         </ul>
     </li>
@@ -31,5 +47,5 @@
 </ul>
 
 <a href="{% url 'empleados:seccion_create' %}"><p> - Crear nueva Seccion</p></a>
-
+<a href="{% url 'home:home_index' %}"><p> - Ir a Inicio</p></a>
 {% endblock content %}

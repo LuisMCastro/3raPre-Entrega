@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    Obreros : Listado de Obreros
+{% endblock title %}
+
+{% block body_title %}
+    Obreros
+{% endblock body_title %}
+{% block body_subtitle %}
+    Listado de Obreros
+{% endblock body_subtitle %}
+
+{% block content %}
+<h4> - Obreros:</h4>
+<ul>
+    {% for obrero in obreros %}
+    <li>
+        <p>Nombre: {{obrero.apellido}} {{obrero.nombre}}</p>
+        <p>Edad: {{obrero.edad}}</p>    
+    </li>
+    <a href="{% url 'empleados:obrero_delete' obrero.id %} "><p> Eliminar obrero</p></a>
+    <a href="{% url 'empleados:obrero_update' obrero.id %}"><p> Modificar obrero</p></a>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'empleados:obrero_create' %}"><p> - Crear nuevo obrero</p></a>
+<a href="{% url 'home:home_index' %}"><p> - Ir a Inicio</p></a>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+{% if form.instance.pk %}
+    Obreros : Editar Obrero
+{% else %}
+    Obreros : Crear Obrero
+{% endif %}
+{% endblock title %}
+
+{% block body_title %}
+Obreros
+{% endblock body_title %}
+
+{% block body_subtitle %}
+{% if form.instance.pk %}
+    Modifique datos de Obrero
+{% else %}
+    Crear un Obrero nuevo
+{% endif %}
+{% endblock body_subtitle %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit">Confirmar</button>
+    </form>
+{% endblock content %}

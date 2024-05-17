@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    Ingenieros : Listado de Ingenieros
+{% endblock title %}
+
+{% block body_title %}
+    Ingenieros
+{% endblock body_title %}
+{% block body_subtitle %}
+    Listado de Ingenieros
+{% endblock body_subtitle %}
+
+{% block content %}
+<ul>
+    {% for ingeniero in ingenieros %}
+    <li>
+        <p>Nombre: {{ingeniero.apellido}} {{ingeniero.nombre}}</p>
+        <p>Edad: {{ingeniero.edad}}</p>    
+    </li>
+    <a href="{% url 'empleados:ingeniero_delete' ingeniero.id %}"><p> Eliminar Ingeniero</p></a>
+    <a href=" {% url 'empleados:ingeniero_update' ingeniero.id %}"><p> Modificar Ingeniero</p></a>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'empleados:ingeniero_create' %}"><p> - Crear nuevo Ingeniero</p></a>
+<a href="{% url 'home:home_index' %}"><p> - Ir a Inicio</p></a>
+{% endblock content %}

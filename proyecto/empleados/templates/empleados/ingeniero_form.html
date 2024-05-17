@@ -1,0 +1,31 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+{% if form.instance.pk %}
+    Ingenieros : Editar Ingeniero
+{% else %}
+    Ingenieros : Crear Ingeniero
+{% endif %}
+{% endblock title %}
+
+{% block body_title %}
+Ingenieros
+{% endblock body_title %}
+
+{% block body_subtitle %}
+{% if form.instance.pk %}
+    Modifique datos de Ingeniero
+{% else %}
+    Crear un Ingeniero nuevo
+{% endif %}
+{% endblock body_subtitle %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit">Confirmar</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    Ingenieros : Eliminar Ingeniero
+{% endblock title %}
+
+{% block body_title %}
+    Ingenieros
+{% endblock body_title %}
+{% block body_subtitle %}
+    Eliminar Ingeniero
+{% endblock body_subtitle %}
+
+{% block content %}
+
+<p class="fs-5  fst-italic ">¿Confirma eliminar a "{{ object.nombre }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar</button>
+    </form>
+    <a href="{% url 'empleados:ingeniero_list' %}">Volver a Ingenieros</a>
+
+{% endblock content %}

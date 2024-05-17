@@ -1,0 +1,26 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    Obreros : Detalle de obrero
+{% endblock title %}
+
+{% block body_title %}
+    Obreros
+{% endblock body_title %}
+{% block body_subtitle %}
+    Detalle de obrero
+{% endblock body_subtitle %}
+
+{% block content %}
+<ul>
+    <li>
+        <p>Nombre: {{obrero.apellido}} {{obrero.nombre}}</p>
+    </li>
+    <li>
+        <p>Edad: {{obrero.edad}}</p> 
+    </li>
+</ul>
+
+<a href="{% url 'empleados:seccion_list' %}"><p> - Volver</p></a>
+<a href="{% url 'home:home_index' %}"><p> - Ir a Inicio</p></a>
+{% endblock content %}
