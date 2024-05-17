@@ -18,3 +18,13 @@ Incluye:
     5. Readme que indique el orden en el que se prueban las cosas y donde estan las funcionalidades.
 
 ## Explicacion breve tecnica: urls, modelos, plantillas
+
+El proyecto cumple la funcion de WEB de Gestion de datos sobre Empleados.
+
+Se utilizo una App llamada empleados para los modelos "Ingeniero_en_jefe","Obrero", y "Seccion".
+
+Se organiza de forma tal que en cada Seccion se encuentra un obrero e ingeniero encargador.
+
+Cada modelo tiene su CRUD y plantilla respectiva a cada una de las funcionalidades.
+
+La plantilla de listado de Secciones cuenta con un buscador para encontrar secciones dentro de la misma.
